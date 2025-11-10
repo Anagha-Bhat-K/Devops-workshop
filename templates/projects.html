@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="projects">
+  <h2>Projects</h2>
+
+  <div class="project-grid">
+    {% for p in projects %}
+    <article class="project-card">
+      <img src="{{ url_for('static', filename=p.img) }}" alt="{{ p.title }}" class="project-thumb">
+      <h3>{{ p.title }}</h3>
+      <p>{{ p.desc }}</p>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

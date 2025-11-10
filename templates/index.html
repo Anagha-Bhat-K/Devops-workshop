@@ -1,13 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>hello world</h1>
-    <h2>Welcome to section</h2>
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="left">
+    <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="profile" class="profile-photo">
+  </div>
+  <div class="right">
+    <h2>Hi, I'm Anagha 👋</h2>
+    <p>2nd-year AIML engineering student. I build web apps, small ML projects, and enjoy clean UI & UX.</p>
+    <p>
+      <a class="btn" href="{{ url_for('projects') }}">See my projects</a>
+      <a class="btn outline" href="{{ url_for('contact') }}">Contact me</a>
+    </p>
+  </div>
+</section>
+{% endblock %}
